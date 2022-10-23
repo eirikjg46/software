@@ -3,6 +3,7 @@ from tkinter import *
 from btn_functions.view_cars import view_cars
 from btn_functions.lend_your_car import lend_your_car
 from btn_functions.log_in import log_in
+#from btn_functions.imagetest import test #Fjern # for å se bil (brukt til testing)
 
 class BaseLayout(tk.Tk):
     def __init__(self):
@@ -17,10 +18,13 @@ class BaseLayout(tk.Tk):
 
         self.log_in_btn = Button(self, text="Log In", padx=50, pady=50, command=lambda: log_in(self))
 
+        #self.test = Button(self, text="test", padx=50, pady=50, command=lambda: test(self)) #Fjern # for å se bil (brukt til testing)
+
         # Putting the buttons on to the grid
         self.view_cars_btn.grid(row=0, column=0, padx=10, pady=10)
         self.lend_your_car_btn.grid(row=0, column=1, padx=10, pady=10)
         self.log_in_btn.grid(row=0, column=2, padx=10, pady=10)
+        #self.test.grid(row=1, column=2, padx=10, pady=10) #Fjern # for å se bil (brukt til testing)
 
 if __name__ == "__main__":
     base = BaseLayout()
