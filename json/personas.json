@@ -1,7 +1,7 @@
 [
   {
       "firstName": "Olav",
-      "lastname": "Larsen",
+      "lastName": "Larsen",
       "age": 25,
       "address": {
           "streetAddress": "Tangerudveien 30",
@@ -32,7 +32,7 @@
   },
   {
       "firstName": "Karl",
-      "lastname": "Olavesen",
+      "lastName": "Olavesen",
       "age": 35,
       "address": {
           "streetAddress": "Reinergata 10",
@@ -63,7 +63,7 @@
   },
   {
       "firstName": "Markus",
-      "lastname": "Hovstad",
+      "lastName": "Hovstad",
       "age": 40,
       "address": {
           "streetAddress": "Oppsalveien 21 B",
@@ -94,7 +94,7 @@
   },
   {
       "firstName": "Brage",
-      "lastname": "Andreasen",
+      "lastName": "Andreasen",
       "age": 21,
       "address": {
           "streetAddress": "Fjerdingbyveien 5 A",
@@ -125,7 +125,7 @@
   },
   {
       "firstName": "Mohammed",
-      "lastname": "Abu",
+      "lastName": "Abu",
       "age": 22,
       "address": {
           "streetAddress": "Nygata 22 D",
@@ -156,7 +156,7 @@
   },
   {
       "firstName": "Lars",
-      "lastname": "Nygaard",
+      "lastName": "Nygaard",
       "age": 29,
       "address": {
           "streetAddress": "Leirdalsgata 19 B",
@@ -187,7 +187,7 @@
   },
   {
       "firstName": "Ronny",
-      "lastname": "Fredriksen",
+      "lastName": "Fredriksen",
       "age": 42,
       "address": {
           "streetAddress": "Bydalsgata 12",
@@ -219,7 +219,7 @@
   {
       
       "firstName": "Sebastian",
-      "lastname": "Thomassen",
+      "lastName": "Thomassen",
       "age": 33,
       "address": {
           "streetAddress": "Sentrumsveien 33 B",
@@ -250,7 +250,7 @@
   },
   {
       "firstName": "Ida",
-      "lastname": "Karstensen",
+      "lastName": "Karstensen",
       "age": 25,
       "address": {
           "streetAddress": "Pettersgaten 10 A",
@@ -281,7 +281,7 @@
   },
   {
       "firstName": "Petter",
-      "lastname": "Hermansen",
+      "lastName": "Hermansen",
       "age": 40,
       "address": {
           "streetAddress": "Fugleveien 1 A",
@@ -312,7 +312,7 @@
   },
   {
       "firstName": "Andrea",
-      "lastname": "Thorvaldsen",
+      "lastName": "Thorvaldsen",
       "age": 29,
       "address": {
           "streetAddress": "Operagaten 44 D",
@@ -343,7 +343,7 @@
   },
   {
       "firstName": "Berit",
-      "lastname": "Skogsberg",
+      "lastName": "Skogsberg",
       "age": 63,
       "address": {
           "streetAddress": "Operagaten 44 D",
@@ -374,7 +374,7 @@
   },
   {
       "firstName": "Kasper",
-      "lastname": "Roaldsen",
+      "lastName": "Roaldsen",
       "age": 35,
       "address": {
           "streetAddress": "Storhamargata 16 B",
@@ -405,7 +405,7 @@
   },
   {
       "firstName": "Hedda",
-      "lastname": "Gabrielsen",
+      "lastName": "Gabrielsen",
       "age": 19,
       "address": {
           "streetAddress": "Måkeveien 22 A",
@@ -436,7 +436,7 @@
   },
   {
       "firstName": "Thomas",
-      "lastname": "Monsen",
+      "lastName": "Monsen",
       "age": 48,
       "address": {
           "streetAddress": "Notveien 3 B",
