@@ -1,4 +1,8 @@
 #Work in progress
+
+#Ting som burde bli lagt til:
+# Årsmodell for biler
+
 import json
 
 f = open('json\personas.json', 'r')
@@ -20,6 +24,8 @@ print(personer)
 #Henter all dataen om Karl(Person 2)
 Karl = personer[1]
 print(Karl)
+
+print(personer[0]['image'])
 
 f.close()
 

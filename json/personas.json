@@ -11,6 +11,7 @@
       },
       "phoneNumber": 71892331,
       "cars": {
+          "image": "../images/audi2017.jpg",
           "brand": "Audi",
           "type": "Petrol",
           "age": "5 years",
