@@ -10,7 +10,7 @@ class BaseLayout(tk.Tk):
         super().__init__()
 
         self.title("Testing")
-        self.geometry("550x400")
+        self.geometry("550x150")
         
         self.view_cars_btn = Button(self, text="Leie bil", padx=50, pady=50, command=lambda: view_cars(self))
 
