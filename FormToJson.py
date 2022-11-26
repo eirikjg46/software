@@ -2,7 +2,7 @@ from tkinter import *
 import json
 
 window = Tk()
-window.geometry('640x300')
+window.geometry('1000x500')
 window.title('Bilutleie')
 
 #Legg til beskrivelse til hver label i tekst:
@@ -44,7 +44,7 @@ gearboxEntry = Entry(window)
 singleDayPriceEntry = Entry(window)
 multiDayPriceEntry = Entry(window)
 
-with open('test.json', 'r') as f:
+with open('json_files\personas.json', 'r') as f:
         data = json.load(f)   
 
 
@@ -89,7 +89,7 @@ def click():
 
     data.append(personer)  
     
-    with open('test.json', 'w') as f:
+    with open('json_files\personas.json', 'w') as f:
         json.dump(data, f)
 
 
