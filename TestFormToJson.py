@@ -1,4 +1,4 @@
-from formToJson import *
+from FormToJson import *
 
 def test_input_data_right_type():
     assert firstNameEntry.get() == str
