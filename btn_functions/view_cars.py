@@ -3,6 +3,7 @@ from tkinter import *
 from tkinter import ttk
 from tkinter.messagebox import showinfo
 import json
+from base_layout import home
 
 f = open('json_files\personas.json', 'r')
 personer = json.load(f)
@@ -11,18 +12,23 @@ def view_cars(self):
         print("Nå ser du på biler. Wow. De er veldig fine.")
         # Toplevel object which will
         # be treated as a new window
-        newWindow = Toplevel(self)
+        #newWindow = Toplevel(self)
     
         # sets the title of the
         # Toplevel widget
-        newWindow.title("New Window")
+        #newWindow.title("New Window")
     
         # sets the geometry of toplevel
-        newWindow.geometry("1000x400")
+        #newWindow.geometry("1000x400")
+
+        for thingy in self.grid_slaves():
+                thingy.grid_forget()
+
+        self.geometry("1000x400")
 
         columns = ('id', 'name', 'age', 'city', 'phoneNumber', 'car', 'singleDay', 'multiDay')
 
-        tree = ttk.Treeview(newWindow, columns=columns, show='headings')
+        tree = ttk.Treeview(self, columns=columns, show='headings')
 
         tree.heading('id', text='ID')
         tree.column('id', width=30)
@@ -72,9 +78,12 @@ def view_cars(self):
         tree.grid(row=0, column=0, sticky='nsew')
 
         # add a scrollbar
-        scrollbar = ttk.Scrollbar(newWindow, orient=tk.VERTICAL, command=tree.yview)
+        scrollbar = ttk.Scrollbar(self, orient=tk.VERTICAL, command=tree.yview)
         tree.configure(yscroll=scrollbar.set)
         scrollbar.grid(row=0, column=1, sticky='ns')
+
+        self.home_btn = Button(self, text="Leie bil", padx=50, pady=50, command=lambda: home(self))
+        self.home_btn.grid(row=1, column=0)
 
 
         
