@@ -539,40 +539,36 @@
             ]
         }
     },
-    [
-        {
-            "firstName": "Ole",
-            "lastName": "Pettersen",
-            "age": 25,
-            "address": {
-                "streetAddress": "Fredrikstadgata 25",
-                "city": "Fredrikstad",
-                "state": "Viken",
-                "postalCode": "1658"
-            },
-            "phoneNumber": 47812345,
-            "cars": {
-                "image": "placeholder.png",
-                "brand": "Audi",
-                "type": "Bensin",
-                "age": "5 \u00e5r",
-                "km": 78032,
-                "licencenr": "AS 50412",
-                "daysAvailable": [
-                    "Onsdag, Torsdag"
-                ],
-                "gearbox": "Bensin",
-                "rentOptions": [
-                    {
-                        "type": "singleDay",
-                        "price": 1000
-                    },
-                    {
-                        "type": "multiDay",
-                        "price": 900
-                    }
-                ]
-            }
+    {
+        "firstName": "Ole",
+        "lastName": "Pettersen",
+        "age": 25,
+        "address": {
+            "streetAddress": "Fredrikstadgata 25",
+            "city": "Fredrikstad",
+            "state": "Viken",
+            "postalCode": "1658"
+        },
+        "phoneNumber": 47812345,
+        "cars": {
+            "image": "placeholder.png",
+            "brand": "Audi",
+            "type": "Bensin",
+            "age": "5 \u00e5r",
+            "km": 78032,
+            "licencenr": "AS 50412",
+            "daysAvailable": ["Onsdag, Torsdag"],
+            "gearbox": "Bensin",
+            "rentOptions": [
+                {
+                    "type": "singleDay",
+                    "price": 1000
+                },
+                {
+                    "type": "multiDay",
+                    "price": 900
+                }
+            ]
         }
-    ]
+    }
 ]
