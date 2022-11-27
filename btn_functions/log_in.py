@@ -1,4 +1,4 @@
 from tkinter import *
 
 def log_in(self):
-    print("Imagine å logge inn. Lol.")
+    print("Congratulaions, you have logges in!")

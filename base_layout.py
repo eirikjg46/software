@@ -1,7 +1,7 @@
 import tkinter as tk
 from tkinter import *
 import btn_functions.view_cars
-from btn_functions.lend_your_car import lend_your_car
+import btn_functions.formToJson
 from btn_functions.log_in import log_in
 #from btn_functions.imagetest import test #Fjern # for å se bil (brukt til testing)
 
@@ -15,7 +15,7 @@ def home(self):
     
     self.view_cars_btn = Button(self, text="Leie bil", padx=50, pady=50, command=lambda: btn_functions.view_cars.view_cars(self))
 
-    self.lend_your_car_btn = Button(self, text="Utleie av egen bil", padx=50, pady=50, command=lambda: lend_your_car(self))
+    self.lend_your_car_btn = Button(self, text="Utleie av egen bil", padx=50, pady=50, command=lambda: btn_functions.formToJson.register(self))
 
     self.log_in_btn = Button(self, text="Log In (Dummy knapp)", padx=50, pady=50, command=lambda: log_in(self))
 
