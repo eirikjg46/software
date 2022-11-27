@@ -53,31 +53,31 @@ def click():
                     {
                         "firstName": firstNameEntry.get(),
                         "lastName": lastNameEntry.get(),
-                        "age": int(ageEntry.get()),
+                        "age": int(ageEntry.get() or 0),
                         "address": {
                             "streetAddress": streetAddressEntry.get(),
                             "city": cityEntry.get(),
                             "state": stateEntry.get(),
                             "postalCode": postalCodeEntry.get()
                         },
-                        "phoneNumber": int(phoneNumberEntry.get()),
+                        "phoneNumber": int(phoneNumberEntry.get() or 0),
                         "cars": {
                             "image": "placeholder.png",
                             "brand": brandEntry.get(),
                             "type": carTypeEntry.get(),
                             "age": carAgeEntry.get(),
-                            "km": int(carKmEntry.get()),
+                            "km": int(carKmEntry.get() or 0),
                             "licencenr": licenceNrEntry.get(),
                             "daysAvailable": [daysAvailableEntry.get()],
                             "gearbox": carTypeEntry.get(),
                             "rentOptions": [
                                 {
                                     "type": "singleDay",
-                                    "price": int(singleDayPriceEntry.get()),
+                                    "price": int(singleDayPriceEntry.get() or 0),
                                 },
                                 {
                                     "type": "multiDay",
-                                    "price": int(multiDayPriceEntry.get())
+                                    "price": int(multiDayPriceEntry.get() or 0)
                                 }
                             ]
                         }
@@ -92,6 +92,9 @@ def click():
     with open('json_files\personas.json', 'w') as f:
         json.dump(data, f)
 
+
+def exitclick():
+    window.quit()
 
 firstNameLabel.grid(row=0, column=1)
 firstNameEntry.grid(row=0, column=2)
@@ -146,6 +149,9 @@ multiDayPriceLabel.grid(row=16, column=1)
 multiDayPriceEntry.grid(row=16, column=2)
 
 button = Button(text='Submit', command=click)
-button.grid(row=17, column=1)
+button.grid(row=17, column=2)
+
+exitbutton = Button(text='Exit', command=exitclick)
+exitbutton.grid(row=18, column=2)
 
 mainloop()
