@@ -49,48 +49,60 @@ with open('json_files\personas.json', 'r') as f:
 
 
 def click():
-    personer = [
-                    {
-                        "firstName": firstNameEntry.get(),
-                        "lastName": lastNameEntry.get(),
-                        "age": int(ageEntry.get() or 0),
-                        "address": {
-                            "streetAddress": streetAddressEntry.get(),
-                            "city": cityEntry.get(),
-                            "state": stateEntry.get(),
-                            "postalCode": postalCodeEntry.get()
-                        },
-                        "phoneNumber": int(phoneNumberEntry.get() or 0),
-                        "cars": {
-                            "image": "placeholder.png",
-                            "brand": brandEntry.get(),
-                            "type": carTypeEntry.get(),
-                            "age": carAgeEntry.get(),
-                            "km": int(carKmEntry.get() or 0),
-                            "licencenr": licenceNrEntry.get(),
-                            "daysAvailable": [daysAvailableEntry.get()],
-                            "gearbox": carTypeEntry.get(),
-                            "rentOptions": [
-                                {
-                                    "type": "singleDay",
-                                    "price": int(singleDayPriceEntry.get() or 0),
-                                },
-                                {
-                                    "type": "multiDay",
-                                    "price": int(multiDayPriceEntry.get() or 0)
-                                }
-                            ]
-                        }
-                
+    with open('json_files\personas.json', 'r') as f:
+        data = json.load(f)   
+        if phoneNumberEntry.get() in data:
+            print("The " + phoneNumberEntry.get() + " phone number is already registred!")
+            exit("Enter a unique phone number")
+            #Can add a message to Tkinter and not a print for better feedback
 
-                }
-                ]
+        elif licenceNrEntry.get() in data:
+            print("The " + licenceNrEntry.get() + " licence number is already registred!")
+            exit("Enter a unique licence number")
+            #Can add a message to Tkinter and not a print for better feedback
+
+        personer = [
+                        {
+                            "firstName": firstNameEntry.get(),
+                            "lastName": lastNameEntry.get(),
+                            "age": int(ageEntry.get() or 0),
+                            "address": {
+                                "streetAddress": streetAddressEntry.get(),
+                                "city": cityEntry.get(),
+                                "state": stateEntry.get(),
+                                "postalCode": postalCodeEntry.get()
+                            },
+                            "phoneNumber": int(phoneNumberEntry.get() or 0),
+                            "cars": {
+                                "image": "placeholder.png",
+                                "brand": brandEntry.get(),
+                                "type": carTypeEntry.get(),
+                                "age": carAgeEntry.get(),
+                                "km": int(carKmEntry.get() or 0),
+                                "licencenr": licenceNrEntry.get(),
+                                "daysAvailable": [daysAvailableEntry.get()],
+                                "gearbox": carTypeEntry.get(),
+                                "rentOptions": [
+                                    {
+                                        "type": "singleDay",
+                                        "price": int(singleDayPriceEntry.get() or 0),
+                                    },
+                                    {
+                                        "type": "multiDay",
+                                        "price": int(multiDayPriceEntry.get() or 0)
+                                    }
+                                ]
+                            }
+                    
+
+                    }
+                    ]
 
 
-    data.append(personer)  
-    
-    with open('json_files\personas.json', 'w') as f:
-        json.dump(data, f)
+        data.append(personer)  
+        
+        with open('json_files\personas.json', 'w') as f:
+            json.dump(data, f)
 
 
 def exitclick():
