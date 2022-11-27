@@ -14,6 +14,7 @@ def view_cars(self):
                 thingy.grid_forget()
 
         self.geometry("1000x400")
+        self.title('Utforsk biler')
 
         columns = ('id', 'name', 'age', 'city', 'phoneNumber', 'car', 'singleDay', 'multiDay')
 

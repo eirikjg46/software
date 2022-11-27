@@ -7,8 +7,8 @@ def register(self):
     for thingy in self.grid_slaves():
         thingy.grid_forget()
 
-    self.geometry('1000x500')
-    self.title('Bilutleie')
+    self.geometry('300x425')
+    self.title('Registreringsskjema')
 
     #Legg til beskrivelse til hver label i tekst:
 
@@ -105,7 +105,6 @@ def register(self):
             with open('json_files\personas.json', 'w') as f:
                 json.dump(data, f)
 
-
     firstNameLabel.grid(row=0, column=1)
     firstNameEntry.grid(row=0, column=2)
 
@@ -161,5 +160,9 @@ def register(self):
     button = Button(text='Submit', command=click)
     button.grid(row=17, column=2)
 
+    #Fiks hvis test funker..
+    #savebutton = Button(text='Save', command=exitclick)
+    #savebutton.grid(row=18, column=2)
+
     exitbutton = Button(text='Back', command=lambda: base_layout.home(self))
-    exitbutton.grid(row=18, column=2)
+    exitbutton.grid(row=20, column=2)
