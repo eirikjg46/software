@@ -61,42 +61,38 @@ def click():
             exit("Enter a unique licence number")
             #Can add a message to Tkinter and not a print for better feedback
 
-        personer = [
-                        {
-                            "firstName": firstNameEntry.get(),
-                            "lastName": lastNameEntry.get(),
-                            "age": int(ageEntry.get() or 0),
-                            "address": {
-                                "streetAddress": streetAddressEntry.get(),
-                                "city": cityEntry.get(),
-                                "state": stateEntry.get(),
-                                "postalCode": postalCodeEntry.get()
-                            },
-                            "phoneNumber": int(phoneNumberEntry.get() or 0),
-                            "cars": {
-                                "image": "placeholder.png",
-                                "brand": brandEntry.get(),
-                                "type": carTypeEntry.get(),
-                                "age": carAgeEntry.get(),
-                                "km": int(carKmEntry.get() or 0),
-                                "licencenr": licenceNrEntry.get(),
-                                "daysAvailable": [daysAvailableEntry.get()],
-                                "gearbox": carTypeEntry.get(),
-                                "rentOptions": [
-                                    {
-                                        "type": "singleDay",
-                                        "price": int(singleDayPriceEntry.get() or 0),
-                                    },
-                                    {
-                                        "type": "multiDay",
-                                        "price": int(multiDayPriceEntry.get() or 0)
-                                    }
-                                ]
-                            }
-                    
-
-                    }
-                    ]
+        personer = {
+                        "firstName": firstNameEntry.get(),
+                        "lastName": lastNameEntry.get(),
+                        "age": int(ageEntry.get() or 0),
+                        "address": {
+                            "streetAddress": streetAddressEntry.get(),
+                            "city": cityEntry.get(),
+                            "state": stateEntry.get(),
+                            "postalCode": postalCodeEntry.get()
+                        },
+                        "phoneNumber": int(phoneNumberEntry.get() or 0),
+                        "cars": {
+                            "image": "placeholder.png",
+                             "brand": brandEntry.get(),
+                            "type": carTypeEntry.get(),
+                            "age": carAgeEntry.get(),
+                            "km": int(carKmEntry.get() or 0),
+                             "licencenr": licenceNrEntry.get(),
+                            "daysAvailable": [daysAvailableEntry.get()],
+                            "gearbox": carTypeEntry.get(),
+                            "rentOptions": [
+                                {
+                                    "type": "singleDay",
+                                    "price": int(singleDayPriceEntry.get() or 0),
+                                },
+                                {
+                                    "type": "multiDay",
+                                    "price": int(multiDayPriceEntry.get() or 0)
+                                }
+                            ]
+                        }
+                }
 
 
         data.append(personer)  

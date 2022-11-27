@@ -557,7 +557,9 @@
             "age": "5 \u00e5r",
             "km": 78032,
             "licencenr": "AS 50412",
-            "daysAvailable": ["Onsdag, Torsdag"],
+            "daysAvailable": [
+                "Onsdag, Torsdag"
+            ],
             "gearbox": "Bensin",
             "rentOptions": [
                 {
