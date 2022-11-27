@@ -1,11 +1,11 @@
 from tkinter import *
 import json
 
+#Debug fil
+
 window = Tk()
 window.geometry('300x425')
 window.title('Bilutleie')
-
-#Legg til beskrivelse til hver label i tekst:
 
 firstNameLabel = Label(window, text="Fornavn:")
 lastNameLabel = Label(window, text="Etternavn:")
