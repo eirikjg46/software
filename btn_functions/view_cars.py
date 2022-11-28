@@ -13,7 +13,7 @@ def view_cars(self):
         for thingy in self.grid_slaves():
                 thingy.grid_forget()
 
-        self.geometry("1000x400")
+        self.geometry("1200x500")
 
         columns = ('id', 'name', 'age', 'city', 'phoneNumber', 'car', 'singleDay', 'multiDay')
 
@@ -53,13 +53,43 @@ def view_cars(self):
         for contact in contacts:
                 tree.insert('', tk.END, values=contact)
 
+        listbox = Listbox(self, height = 15,
+                  width = 30,
+                  bg = "white",
+                  activestyle = 'dotbox',
+                  font = "Helvetica",
+                  fg = "black")
+
+        listbox.grid(row=0, column=2)
 
         def item_selected(event):
                 for selected_item in tree.selection():
+
+                        listbox.delete(0, END)
+
                         item = tree.item(selected_item)
-                        record = item['values']
-                        # show a message
-                        showinfo(title='Information', message=','.join(record))
+
+                        jsonIndex = item['values'][0]-1
+                        fName = "First Name: " + personer[jsonIndex]['firstName']
+                        lName = "Last Name: " + personer[jsonIndex]['lastName']
+                        age = "Age: " + str(personer[jsonIndex]['age'])
+                        address = "Address: " + personer[jsonIndex]['address']['streetAddress']
+                        city = "City: " + personer[jsonIndex]['address']['city']
+                        state = "State: " + personer[jsonIndex]['address']['state']
+                        postalCode = "Postal Code: " + personer[jsonIndex]['address']['postalCode']
+                        phoneNumber = "Phone Number: " + str(personer[jsonIndex]['phoneNumber'])
+
+
+                        listbox.insert(END, fName)
+                        listbox.insert(END, lName)
+                        listbox.insert(END, age)
+                        listbox.insert(END, address)
+                        listbox.insert(END, city)
+                        listbox.insert(END, state)
+                        listbox.insert(END, postalCode)
+                        listbox.insert(END, phoneNumber)
+
+                        
 
 
         tree.bind('<<TreeviewSelect>>', item_selected)
@@ -67,12 +97,20 @@ def view_cars(self):
         tree.grid(row=0, column=0, sticky='nsew')
 
         # add a scrollbar
-        scrollbar = ttk.Scrollbar(self, orient=tk.VERTICAL, command=tree.yview)
-        tree.configure(yscroll=scrollbar.set)
-        scrollbar.grid(row=0, column=1, sticky='ns')
+        scrollbar_treeview = ttk.Scrollbar(self, orient=tk.VERTICAL, command=tree.yview)
+        tree.configure(yscroll=scrollbar_treeview.set)
+        scrollbar_treeview.grid(row=0, column=1, sticky='ns')
 
-        self.home_btn = Button(self, text="Leie bil", padx=50, pady=50, command=lambda: home(self))
-        self.home_btn.grid(row=1, column=0, sticky=W)
+        scrollbar_listbox = tk.Scrollbar(self, orient=tk.VERTICAL, command=listbox.yview)
+        listbox.config(yscroll=scrollbar_listbox.set)
+        scrollbar_listbox.grid(row=0, column=4, sticky='ns')
+
+        home_btn = Button(self, text="Leie bil", padx=50, pady=50, command=lambda: home(self))
+        home_btn.grid(row=1, column=0, sticky=W)
+
+        
+
+        
 
 
         
