@@ -1,4 +1,4 @@
-# Software Engineering og testing | gruppe 19
+# Software Engineering og testing | Gruppe 19
 Gruppeoppgave -
 base_layout.py inneholder hoved funksjonen som åpner tkinter og gjør det mulig å kjøre hele koden
 for å se de ulike funksjonene. 
