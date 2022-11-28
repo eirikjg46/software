@@ -106,7 +106,7 @@ def view_cars(self):
         listbox.config(yscroll=scrollbar_listbox.set)
         scrollbar_listbox.grid(row=0, column=4, sticky='ns')
 
-        home_btn = Button(self, text="Leie bil", padx=50, pady=50, command=lambda: home(self))
+        home_btn = Button(self, text="Back", padx=50, pady=50, command=lambda: home(self))
         home_btn.grid(row=1, column=0, sticky=W)
 
         
