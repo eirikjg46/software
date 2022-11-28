@@ -10,7 +10,7 @@ def home(self):
     for thingy in self.grid_slaves():
         thingy.grid_forget()
 
-    self.title("Testing")
+    self.title("Bilutleie tjeneste")
     self.geometry("650x150")
     
     view_cars_btn = Button(self, text="Leie bil", padx=50, pady=50, command=lambda: btn_functions.view_cars.view_cars(self))
