@@ -1,6 +1,6 @@
 # software
-Gruppeoppgave
-base_layout.py inneholder hoved funksjonen som åper tkinter og gjør det mulig å kjøre hele koden
+Gruppeoppgave -
+base_layout.py inneholder hoved funksjonen som åpner tkinter og gjør det mulig å kjøre hele koden
 for å se de ulike funksjonene. 
 json_files har informasjonen som blir lagt inn når man "submitter" registreringen sin via "lend_your_car_btn" altså 
 "utleie av egen bil" knappen når du kjører koden. 
