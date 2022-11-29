@@ -13,7 +13,7 @@ def view_cars(self):
         for thingy in self.grid_slaves():
                 thingy.grid_forget()
 
-        self.geometry("1200x500")
+        self.geometry("1400x500")
         self.title('Utforsk biler')
 
         columns = ('id', 'name', 'age', 'city', 'phoneNumber', 'car', 'singleDay', 'multiDay')
@@ -22,19 +22,19 @@ def view_cars(self):
 
         tree.heading('id', text='ID')
         tree.column('id', width=30)
-        tree.heading('name', text='Full Name')
+        tree.heading('name', text='Navn')
         tree.column("name", width=150)
-        tree.heading('age', text='Age')
+        tree.heading('age', text='Alder')
         tree.column("age", width=50)
-        tree.heading('city', text='City')
+        tree.heading('city', text='By')
         tree.column("city", width=100)
-        tree.heading('phoneNumber', text='Phone Number')
+        tree.heading('phoneNumber', text='Mobil nummer')
         tree.column("phoneNumber", width=100)
-        tree.heading('car', text='Car')
+        tree.heading('car', text='Bil')
         tree.column("car", width=150)
-        tree.heading('singleDay', text='Single-Day Price')
+        tree.heading('singleDay', text='Pris 1-dag')
         tree.column("singleDay", width=100)
-        tree.heading('multiDay', text='Multi-Day, Price Per Day')
+        tree.heading('multiDay', text='Pris flere dager')
         tree.column("multiDay", width=140)
 
         contacts = []
@@ -55,7 +55,7 @@ def view_cars(self):
                 tree.insert('', tk.END, values=contact)
 
         listbox = Listbox(self, height = 15,
-                  width = 30,
+                  width = 55,
                   bg = "white",
                   activestyle = 'dotbox',
                   font = "Helvetica",
@@ -71,16 +71,33 @@ def view_cars(self):
                         item = tree.item(selected_item)
 
                         jsonIndex = item['values'][0]-1
-                        fName = "First Name: " + personer[jsonIndex]['firstName']
-                        lName = "Last Name: " + personer[jsonIndex]['lastName']
-                        age = "Age: " + str(personer[jsonIndex]['age'])
-                        address = "Address: " + personer[jsonIndex]['address']['streetAddress']
-                        city = "City: " + personer[jsonIndex]['address']['city']
-                        state = "State: " + personer[jsonIndex]['address']['state']
-                        postalCode = "Postal Code: " + personer[jsonIndex]['address']['postalCode']
-                        phoneNumber = "Phone Number: " + str(personer[jsonIndex]['phoneNumber'])
+                        fName = "Fornavn: " + personer[jsonIndex]['firstName']
+                        lName = "Etternavn: " + personer[jsonIndex]['lastName']
+                        age = "Alder til utleier: " + str(personer[jsonIndex]['age'])
+                        address = "Adresse: " + personer[jsonIndex]['address']['streetAddress']
+                        city = "By: " + personer[jsonIndex]['address']['city']
+                        state = "Fylke: " + personer[jsonIndex]['address']['state']
+                        postalCode = "Postnummer: " + personer[jsonIndex]['address']['postalCode']
+                        phoneNumber = "Mobilnummer: " + str(personer[jsonIndex]['phoneNumber'])
+                        brand = "Bilmerke: " + personer[jsonIndex]['cars']['brand']
+                        type = "Modell: " + personer[jsonIndex]['cars']['type']
+                        carAge = "Alder til bil: " + personer[jsonIndex]['cars']['age']
+                        totalKm = "Total Km: " + str(personer[jsonIndex]['cars']['km'])
+                        licenceNumber = "Skilt nummer: " + personer[jsonIndex]['cars']['licencenr']
+                        daysAvailable = "Dager tilgjengelig: "
+                        gearbox = "Girkasse: " + personer[jsonIndex]['cars']['gearbox']
+                        price1Day = "Pris for å leie 1 dag: " + personer[jsonIndex]['cars']['rentOptions'][0]['price'] + "kr"
+                        priceMultiDay = "Pris for å leie flere dager: " + personer[jsonIndex]['cars']['rentOptions'][1]['price'] + "kr"
 
-
+                        #Legger til dager i daysAvailable
+                        FIRST = True
+                        for day in personer[jsonIndex]['cars']['daysAvailable']:
+                                if FIRST:
+                                        FIRST = False
+                                        daysAvailable += day
+                                else:
+                                        daysAvailable += ", " + day
+                        
                         listbox.insert(END, fName)
                         listbox.insert(END, lName)
                         listbox.insert(END, age)
@@ -89,6 +106,15 @@ def view_cars(self):
                         listbox.insert(END, state)
                         listbox.insert(END, postalCode)
                         listbox.insert(END, phoneNumber)
+                        listbox.insert(END, brand)
+                        listbox.insert(END, type)
+                        listbox.insert(END, carAge)
+                        listbox.insert(END, totalKm)
+                        listbox.insert(END, licenceNumber)
+                        listbox.insert(END, daysAvailable)
+                        listbox.insert(END, gearbox)
+                        listbox.insert(END, price1Day)
+                        listbox.insert(END, priceMultiDay)
 
                         
 
